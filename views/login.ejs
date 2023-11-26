@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>로그인 페이지</title>
+    </head>
+    <body>
+        <%- include('header') %>
+        <h1>로그인</h1>
+        <form method="post" action="/login">
+        <table>
+                <tr>
+                    <td><label>학교 이메일</label></td>
+                    <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <td><label>비밀번호</label></td>
+                    <td><input type="password" name="password"></td>
+                </tr>
+            </table>
+            <input type="submit" value="로그인">
+        </form>
+    </body>
+</html> 

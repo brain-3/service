@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>회원가입 페이지</title>
+</head>
+<body>
+    <%- include('header') %>
+    <h1>회원가입</h1>
+        <form action="/new" method="POST">
+        <table>
+                <tr>
+                    <td><label for="username">이름</label></td>
+                    <td><input type="text"id="username" name="username" required></td>
+                </tr>
+                <tr>
+                    <td><label for="student_id">학교 이메일</label></td>
+                   <td><input type="text" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="password">비밀번호</label></td>
+                    <td><input type="password" id="password" name="password" required></td>
+                </tr>
+                    </table>
+                
+            </table>
+            <input type="submit" value="회원가입">
+        </form>
+    </body>
+    </html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사용자 평가 페이지</title>
+  <style>
+    .rating {
+      unicode-bidi: bidi-override;
+      direction: rtl;
+      text-align: center;
+    }
+    .rating input {
+      display: none;
+    }
+    .rating label {
+      display: inline-block;
+      padding: 5px;
+      font-size: 24px;
+      color: #ccc;
+      cursor: pointer;
+    }
+    .rating label:hover,
+    .rating label:hover ~ label,
+    .rating input:checked ~ label {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+<form action="/eva" method="POST">
+<h2><%= users[0].dataValues.username%>님과의 프로젝트 후기</h2>
+
+<div class="rating" id="ratings">
+  <input type="radio" id="star5" name="ratings" value=5 /><label for="star5" title="5 stars">☆</label>
+  <input type="radio" id="star4" name="ratings" value=4 /><label for="star4" title="4 stars">☆</label>
+  <input type="radio" id="star3" name="ratings" value=3 /><label for="star3" title="3 stars">☆</label>
+  <input type="radio" id="star2" name="ratings" value=2/><label for="star2" title="2 stars">☆</label>
+  <input type="radio" id="star1" name="ratings" value=1 /><label for="star1" title="1 star">☆</label>
+</div>
+
+<input type="submit" value="제출하기">
+
+<!-- <button onclick="submitRating()">평점 제출</button>
+
+ <script>
+  function submitRating() {
+    const ratingElements = document.getElementsByName('rating');
+    let selectedRating = null;
+
+    for (const element of ratingElements) {
+      if (element.checked) {
+        selectedRating = element.value;
+        break;
+      }
+    }
+
+    if (selectedRating !== null) {
+      // 여기에 서버로 전송하는 로직을 추가할 수 있습니다.
+      alert('평점이 제출되었습니다: ' + selectedRating);
+    } else {
+      alert('평점을 선택하세요.');
+    }
+  } -->
+</script>
+</form>
+</body>
+</html>
